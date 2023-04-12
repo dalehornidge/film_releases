@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-const MovieForm = (onMovieSubmit) => {
+const MovieForm = ({onMovieSubmit}) => {
 
     const [name, setName] = useState()
     const [url, setUrl] = useState()
@@ -30,7 +30,8 @@ const MovieForm = (onMovieSubmit) => {
     }
 
     return ( 
-        <form>
+        <form
+        onSubmit={handleFormSubmit} >
             <input type="text"
             placeholder="Film Name"
             value={name}
@@ -43,7 +44,7 @@ const MovieForm = (onMovieSubmit) => {
             />
             <input type="submit"
             value="Post"
-            onSubmit={handleFormSubmit} />
+            />
         </form>
      );
 }
